@@ -1,26 +1,30 @@
-@import '../bootstrap/less/bootstrap.less';
 @import 'lesshat';
 /* Import Fonts
 ------------------------------------------------------------ */
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+//@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 
 /* Font Stacks */
-.opensans {
-	font-family: "Open Sans", "Trebuchet MS", Calibri, sans-serif;
+.customsanserif {
+	font-family: 'PT Sans Narrow','PT Sans', Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
 }
 .arial {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
+.fontawesome {
+  font-family: FontAwesome;
+}
 
 /* Colors */
 @red: #f00;
-@orange: #f90;
+@orange: #F05423;
 @yellow: #ff0;
 @green: #0f0;
-@blue: #00f;
+@blue: #346195;
 @purple: #90f;
-@beige: #c96;
+@beige: #CDC8B1;
 @brown: #630;
 
 @ltred: lighten(@red,20%);
@@ -31,8 +35,9 @@
 @dkyellow: darken(@yellow, 20%);
 @ltgreen: lighten(@green,20%);
 @dkgreen: darken(@green, 20%);
-@ltblue: lighten(@blue,20%);
+@ltblue: #A4C7E2;
 @dkblue: darken(@blue, 20%);
+@brtblue: #6BB2E2;
 @ltpurple: lighten(@purple,20%);
 @dkpurple: darken(@purple, 20%);
 @ltbeige: lighten(@beige,20%);
@@ -42,32 +47,30 @@
 
 /* Neutrals */
 @white: #FFF;
-@ltgrey: #CCC;
+@ltgrey: #ededed;
 @medgrey: #999;
 @dkgrey: #666;
 @black: #000;
 
 /* Gradients */
 .quickgradient(@color) {
-	.gradient(@color,darken(@color,20%),lighten(@color,20%));
+  .background-image(linear-gradient(to bottom, darken(@color,20%) 0%,lighten(@color,20%) 100%))
 }
 
 /* Buttons */
 .button(@color:@red) {
-	.gradient(@color,darken(@color,20%),lighten(@color,20%));
+	background-color: @color;
 	.border-radius(5px);
 	border: .5px solid darken(@color,20%);
 	.drop-shadow(0, 0, 2px, 0.2);
 	padding: 6px 24px;
-	.arial;
+	.customsanserif;
 	color: #FFFFFF !important;
 	font-size: 12px;
 	font-weight: normal;
-	text-shadow: 1px 1px 2px #000000;
     text-transform: uppercase;
     display: table;
     margin: 12px auto;
-    filter: dropshadow(color=#000000, offx=1, offy=1);
 }
 
 .button:hover,
@@ -110,7 +113,7 @@
 }
 
 /* Clears */
-.clearfix {
+.clear {
     content: ".";
     display: block;
     height: 0;

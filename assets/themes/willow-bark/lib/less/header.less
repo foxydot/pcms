@@ -1,3 +1,55 @@
+/* Pre Header */
+.pre-header{
+  border-top: 4px solid @blue;
+  background: @ltgrey;
+  .wrap{
+    text-align: right;
+    .social-media{
+      display: inline-block;
+      a{
+        i.fa{
+          background: @dkgrey;
+          color: @white;
+          width: 20px;
+          height: 20px;
+          width: 2rem;
+          height: 2rem;
+          text-align: center;
+          line-height: 20px;
+          line-height: 2rem;
+          .border-radius(100%);
+        }
+        span{
+          text-indent: -9999px;
+          display: none;
+          }
+      }
+     }
+    .search-form{
+      display: inline-block;
+      padding: 1rem 0 1rem 1rem;
+      position: relative;
+      input[type="search"] {
+        padding: 0.5rem;
+      }
+      input[type="submit"] {
+        .fontawesome;
+        font-size: 1.4rem;
+        border: 0;
+        clip: auto;
+        height: auto;
+        margin: 0;
+        padding: 0.5rem;
+        position: absolute;
+        width: auto;
+        background: none;
+        right: 0.5rem;
+        color: @medgrey;
+      }
+    }
+  }
+}
+
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -16,7 +68,7 @@ Site Header
 
 .title-area {
   float: left;
-  font-family: Lato, sans-serif;
+  .customsanserif;
   font-weight: 700;
   padding: 16px 0;
   padding: 1.6rem 0;
@@ -54,7 +106,7 @@ Site Header
 
 .header-full-width .title-area,
 .header-full-width .site-title {
-  width: 100%;
+  /*width: 100%;*/
 }
 
 .header-image .site-description,
@@ -66,14 +118,15 @@ Site Header
 /* Logo, hide text */
 
 .header-image .site-header .wrap {
-  background: url(images/logo.png) no-repeat left;
   padding: 0;
 }
 
 .header-image .site-title a {
   float: left;
-  min-height: 164px;
-  width: 100%;
+  min-height: 100px;
+  width: 300px;
+  background: url(../img/logo.png) no-repeat center center;
+  background-size: contain;
 }
 
 /* Widget Area
@@ -83,6 +136,7 @@ Site Header
   float: right;
   text-align: right;
   width: 800px;
+  display: none;
 }
 
 .header-image .site-header .widget-area {
