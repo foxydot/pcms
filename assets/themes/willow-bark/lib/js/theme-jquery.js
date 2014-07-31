@@ -8,14 +8,14 @@ jQuery(document).ready(function($) {
 	$('#footer-widgets').addClass('cols-'+numwidgets);
 	
 	//special for lifestyle
-	$('.ftr-menu ul.menu>li').after(function(){
+	$('#menu-primary-links>li').after(function(){
 		if(!$(this).hasClass('last-child') && $(this).hasClass('menu-item') && $(this).css('display')!='none'){
 			return '<li class="separator">|</li>';
 		}
 	});
 	// add target="_blank" to all *external* 
     var internal_urls = Array('truepoint.oc','72.52.131.35','truepointwealth.com','truepointinc.com');
-    $('a').attr('target',function(){
+    /*$('a').attr('target',function(){
         var url = $(this).attr('href');
         var target = $(this).attr('target');
         if(url == '#' || strripos(url,'http',0)===false){
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
             }
             return '_blank';
         }
-    });
+    });*/
 });
 function strripos(haystack, needle, offset) {
   //  discuss at: http://phpjs.org/functions/strripos/

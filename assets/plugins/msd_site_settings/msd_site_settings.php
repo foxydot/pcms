@@ -2,7 +2,7 @@
 /*
 Plugin Name: MSD Site Settings
 Description: Provides settings panel for several social/address options and widgets/shortcodes/functions for display.
-Version: 0.2
+Version: 0.3
 Author: Catherine M OBrien Sandrick (CMOS)
 Author URI: http://msdlab.com/biological-assets/catherine-obrien-sandrick/
 License: GPL v2
@@ -12,7 +12,8 @@ class MSDSocial{
 	private $the_path;
 	private $the_url;
 	public $icon_size;
-	function MSDSocial(){
+	function MSDSocial(){$this->__construct();}
+    function __construct(){
 		$this->the_path = plugin_dir_path(__FILE__);
 		$this->the_url = plugin_dir_url(__FILE__);
 		$this->icon_size = get_option('msdsocial_icon_size')?get_option('msdsocial_icon_size'):'0';
@@ -31,7 +32,8 @@ class MSDSocial{
 		add_shortcode('msd-address',array(&$this,'get_address'));
 		add_shortcode('msd-bizname',array(&$this,'get_bizname'));
 		add_shortcode('msd-copyright',array(&$this,'get_copyright'));
-		add_shortcode('msd-digits',array(&$this,'get_digits'));
+        add_shortcode('msd-digits',array(&$this,'get_digits'));
+        add_shortcode('msd-phone',array(&$this,'get_phone'));
         add_shortcode('msd-social',array(&$this,'social_media'));
         add_shortcode('msd-hours',array(&$this,'get_hours'));
 	}
@@ -64,13 +66,13 @@ function get_bizname(){
 function get_address(){
 	if((get_option('msdsocial_street')!='') || (get_option('msdsocial_city')!='') || (get_option('msdsocial_state')!='') || (get_option('msdsocial_zip')!='')) {
 		$ret = '<address itemscope itemtype="http://schema.org/LocalBusiness">';
-			$ret .= (get_option('msdsocial_street')!='')?'<span itemprop="streetAddress">'.get_option('msdsocial_street').'</span> ':'';
-			$ret .= (get_option('msdsocial_street2')!='')?'<span itemprop="streetAddress">'.get_option('msdsocial_street2').'</span> ':'';
-			$ret .= (get_option('msdsocial_city')!='')?'<span itemprop="addressLocality">'.get_option('msdsocial_city').'</span>, ':'';
-			$ret .= (get_option('msdsocial_state')!='')?'<span itemprop="addressRegion">'.get_option('msdsocial_state').'</span> ':'';
-			$ret .= (get_option('msdsocial_zip')!='')?'<span itemprop="postalCode">'.get_option('msdsocial_zip').'</span> ':'';
+			$ret .= (get_option('msdsocial_street')!='')?'<span itemprop="streetAddress" class="msdsocial_street">'.get_option('msdsocial_street').'</span> ':'';
+			$ret .= (get_option('msdsocial_street2')!='')?'<span itemprop="streetAddress" class="msdsocial_street_2">'.get_option('msdsocial_street2').'</span> ':'';
+			$ret .= (get_option('msdsocial_city')!='')?'<span itemprop="addressLocality" class="msdsocial_city">'.get_option('msdsocial_city').'</span>, ':'';
+			$ret .= (get_option('msdsocial_state')!='')?'<span itemprop="addressRegion" class="msdsocial_state">'.get_option('msdsocial_state').'</span> ':'';
+			$ret .= (get_option('msdsocial_zip')!='')?'<span itemprop="postalCode" class="msdsocial_zip">'.get_option('msdsocial_zip').'</span> ':'';
 		$ret .= '</address>';
-		return $ret;
+		  return $ret;
 		} else {
 			return false;
 		} 

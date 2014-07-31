@@ -1,28 +1,37 @@
 @import 'lesshat';
 /* Import Fonts
 ------------------------------------------------------------ */
-//@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 /* Font Stacks */
-.customsanserif {
-	font-family: 'PT Sans Narrow','PT Sans', Helvetica, "Helvetica Neue", Arial, sans-serif;
-  font-weight: normal;
+/* Font Stacks */
+.customsansserif(@size:1.6) {
+  font-family: "Open Sans", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: unit((@size*10),px);
+  font-size: unit(@size,rem);
 }
-.arial {
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+.customsanserif(@size:1.6){
+  .customsansserif(@size);
 }
+
+.arial(@size:1.6) {
+  font-family: "Trebucet MS","Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: unit((@size*10),px);
+  font-size: unit(@size,rem);
+}
+
 .fontawesome {
   font-family: FontAwesome;
 }
 
 /* Colors */
 @red: #f00;
-@orange: #F05423;
+@orange: #E97625;
 @yellow: #ff0;
 @green: #0f0;
-@blue: #346195;
+@blue: #0B3B7C;
 @purple: #90f;
 @beige: #CDC8B1;
 @brown: #630;
@@ -35,9 +44,9 @@
 @dkyellow: darken(@yellow, 20%);
 @ltgreen: lighten(@green,20%);
 @dkgreen: darken(@green, 20%);
-@ltblue: #A4C7E2;
+@ltblue: lighten(@blue, 20%);
 @dkblue: darken(@blue, 20%);
-@brtblue: #6BB2E2;
+@brtblue: @blue;
 @ltpurple: lighten(@purple,20%);
 @dkpurple: darken(@purple, 20%);
 @ltbeige: lighten(@beige,20%);
@@ -47,9 +56,10 @@
 
 /* Neutrals */
 @white: #FFF;
-@ltgrey: #ededed;
-@medgrey: #999;
-@dkgrey: #666;
+@vltgrey: #E6E7E8;
+@ltgrey: #B4B5B8;
+@medgrey: #7D868D;
+@dkgrey: #64666B;
 @black: #000;
 
 /* Gradients */
@@ -58,9 +68,9 @@
 }
 
 /* Buttons */
-.button(@color:@red) {
+.button(@color:@orange) {
 	background-color: @color;
-	.border-radius(5px);
+	.border-radius(12px);
 	border: .5px solid darken(@color,20%);
 	.drop-shadow(0, 0, 2px, 0.2);
 	padding: 6px 24px;
@@ -68,9 +78,9 @@
 	color: #FFFFFF !important;
 	font-size: 12px;
 	font-weight: normal;
-    text-transform: uppercase;
-    display: table;
-    margin: 12px auto;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px auto;
 }
 
 .button:hover,

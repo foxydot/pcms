@@ -53,7 +53,7 @@ function msdlab_search_text($text) {
  * Customize search button text
  */
 function msdlab_search_button($text) {
-    $text = "&#xF002;";
+    $text = "&#xF105;";
     return $text;
 }
 
@@ -91,12 +91,25 @@ function msdlab_page_banner(){
 
 /*** SIDEBARS ***/
 function msdlab_add_extra_theme_sidebars(){
+    //* Remove the header right widget area
+    unregister_sidebar( 'header-right' );
+    genesis_register_sidebar(array(
+    'name' => 'Pre-header Sidebar',
+    'description' => 'Widget above the logo/nav header',
+    'id' => 'pre-header'
+            ));
+   /* genesis_register_sidebar(array(
+    'name' => 'Page Topper Sidebar',
+    'description' => 'Widget next to featured image',
+    'id' => 'msdlab_page_topper_right'
+            ));*/
     genesis_register_sidebar(array(
     'name' => 'Blog Sidebar',
     'description' => 'Widgets on the Blog Pages',
     'id' => 'blog'
             ));
 }
+
 function msdlab_do_blog_sidebar(){
     if(is_active_sidebar('blog')){
         dynamic_sidebar('blog');

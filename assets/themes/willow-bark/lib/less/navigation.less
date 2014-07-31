@@ -8,7 +8,7 @@ Site Navigation
   .customsanserif;
   line-height: 1.5;
   width: 100%;
-  .menu-item {
+  .menu-item,.separator {
     display: inline-block;
     text-align: left;
     a {
@@ -118,13 +118,18 @@ Site Navigation
   display: inline-block;
   float: right;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   li.menu-item{
+    font-size: 18px;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
     a{
       color: @blue;
       text-transform: uppercase;
+      border-bottom: 3px solid @white;
+      padding: 0;
     }
     .sub-menu{
       border: 2px solid @ltgrey;
@@ -144,11 +149,16 @@ Site Navigation
       }
     }
   }
+  li.separator {
+    color: @orange;
+  }
   li:hover, li.current-menu-item, li.current-menu-ancestor{
     a, a:hover{
-      color:@orange;
       text-decoration: none;
+      border-bottom: 3px solid @orange;
       }
+  }
+  li.last-child{
   }
 }
 .mainNav>ul>li.first>ul>li.title>ul>li>ul>li {

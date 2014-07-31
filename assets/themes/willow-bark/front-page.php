@@ -1,5 +1,5 @@
 <?php
-remove_action('genesis_after_header','msdlab_do_title_area');
+//remove_action('genesis_after_header','msdlab_do_title_area');
 
 
 
