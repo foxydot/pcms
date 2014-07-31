@@ -7013,15 +7013,13 @@ Site Footer
 .site-footer {
   background-color: #0b3b7c;
   color: #e6e7e8;
-  font-size: 12px;
-  font-size: 1.2rem;
   font-family: "Open Sans", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 10px;
+  font-size: 1rem;
   padding: 40px 0;
   padding: 1rem 0;
-  text-align: left;
+  text-align: center;
 }
 .site-footer .copyright,
 .site-footer .social {
@@ -7045,6 +7043,11 @@ Site Footer
 }
 .site-footer a {
   color: #e6e7e8;
+}
+.site-footer .ftr-menu {
+  width: auto;
+  display: inline-block;
+  margin-left: 3rem;
 }
 .site-footer .ftr-menu .menu {
   list-style: none outside none;

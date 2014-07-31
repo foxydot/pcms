@@ -5,12 +5,10 @@ Site Footer
 .site-footer {
   background-color: @blue;
   color: @vltgrey;
-  font-size: 12px;
-  font-size: 1.2rem;
-  .customsanserif;
+  .customsanserif(1);
   padding: 40px 0;
   padding: 1rem 0;
-  text-align: left;
+  text-align: center;
   .copyright,.social{.make-sm-column(6);}
   .copyright{text-align: right;}
   p {
@@ -20,6 +18,9 @@ Site Footer
     color: @vltgrey;
   }
   .ftr-menu{
+    width: auto;
+    display: inline-block;
+    margin-left: 3rem;
     .menu{
       list-style: none outside none;
       li{

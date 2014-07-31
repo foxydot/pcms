@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 	$('#footer-widgets').addClass('cols-'+numwidgets);
 	
 	//special for lifestyle
-	$('#menu-primary-links>li').after(function(){
+	$('#menu-primary-links>li,#menu-footer-links>li').after(function(){
 		if(!$(this).hasClass('last-child') && $(this).hasClass('menu-item') && $(this).css('display')!='none'){
 			return '<li class="separator">|</li>';
 		}
