@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: MSD Image Widget (MSDLAB EDIT. PREPARE PATCH BEFORE UPDATING.)
+Plugin Name: Image Widget - MSDLAB Fork
 Plugin URI: http://wordpress.org/extend/plugins/image-widget/
 Description: A simple image widget that uses the native WordPress media manager to add image widgets to your site.
 Author: Modern Tribe, Inc.
-Version: 4.0.7
-Author URI: http://tri.be
+Version: 4.1
+Author URI: http://m.tri.be/26
 */
 
 // Block direct requests
@@ -23,7 +23,7 @@ add_action('widgets_init', 'tribe_load_image_widget');
  **/
 class Tribe_Image_Widget extends WP_Widget {
 
-	const VERSION = '4.0.6';
+	const VERSION = '4.1';
 
 	const CUSTOM_IMAGE_SIZE_SLUG = 'tribe_image_widget_custom';
 
@@ -91,9 +91,10 @@ class Tribe_Image_Widget extends WP_Widget {
 			$instance['description'] = apply_filters( 'widget_text', $instance['description'], $args, $instance );
 			$instance['link'] = apply_filters( 'image_widget_image_link', esc_url( $instance['link'] ), $args, $instance );
 			$instance['linktarget'] = apply_filters( 'image_widget_image_link_target', esc_attr( $instance['linktarget'] ), $args, $instance );
-			$instance['linktext'] = apply_filters( 'image_widget_image_link_text', esc_attr( $instance['linktext'] ), $args, $instance );
 			$instance['width'] = apply_filters( 'image_widget_image_width', abs( $instance['width'] ), $args, $instance );
 			$instance['height'] = apply_filters( 'image_widget_image_height', abs( $instance['height'] ), $args, $instance );
+			$instance['maxwidth'] = apply_filters( 'image_widget_image_maxwidth', esc_attr( $instance['maxwidth'] ), $args, $instance );
+			$instance['maxheight'] = apply_filters( 'image_widget_image_maxheight', esc_attr( $instance['maxheight'] ), $args, $instance );
 			$instance['align'] = apply_filters( 'image_widget_image_align', esc_attr( $instance['align'] ), $args, $instance );
 			$instance['alt'] = apply_filters( 'image_widget_image_alt', esc_attr( $instance['alt'] ), $args, $instance );
 
@@ -130,7 +131,7 @@ class Tribe_Image_Widget extends WP_Widget {
 		}
 		$instance['link'] = $new_instance['link'];
 		$instance['linktarget'] = $new_instance['linktarget'];
-		$instance['linktext'] = $new_instance['linktext'];
+        $instance['linktext'] = $new_instance['linktext'];
 		$instance['width'] = abs( $new_instance['width'] );
 		$instance['height'] =abs( $new_instance['height'] );
 		if ( !defined( 'IMAGE_WIDGET_COMPATIBILITY_TEST' ) ) {
@@ -182,6 +183,7 @@ class Tribe_Image_Widget extends WP_Widget {
 			width: 100%;
 			height: 34px;
 			line-height: 33px;
+			margin-top: 15px;
 		}
 		.tribe_preview .aligncenter {
 			display: block;
@@ -194,6 +196,7 @@ class Tribe_Image_Widget extends WP_Widget {
 		}
 		.tribe_preview img {
 			margin: 10px 0;
+			height: auto;
 		}
 	</style>
 	<?php
@@ -211,9 +214,11 @@ class Tribe_Image_Widget extends WP_Widget {
 			'description' => '',
 			'link' => '',
 			'linktarget' => '',
-			'linktext' => '',
+            'linktext' => '',
 			'width' => 0,
 			'height' => 0,
+			'maxwidth' => '100%',
+			'maxheight' => '',
 			'image' => 0, // reverse compatible - now attachement_id
 			'imageurl' => '', // reverse compatible.
 			'align' => 'none',
@@ -277,18 +282,18 @@ class Tribe_Image_Widget extends WP_Widget {
 		$instance['height'] = abs( $instance['height'] );
 
 		$attr = array();
-		$attr['alt'] = $instance['title'];
+		$attr['alt'] = ( !empty( $instance['alt'] ) ) ? $instance['alt'] : $instance['title'];
 		if (is_array($size)) {
 			$attr['class'] = 'attachment-'.join('x',$size);
 		} else {
 			$attr['class'] = 'attachment-'.$size;
 		}
 		$attr['style'] = '';
-		if (!empty($instance['width'])) {
-			$attr['style'] .= "max-width: {$instance['width']}px;";
+		if (!empty($instance['maxwidth'])) {
+			$attr['style'] .= "max-width: {$instance['maxwidth']};";
 		}
-		if (!empty($instance['height'])) {
-			$attr['style'] .= "max-height: {$instance['height']}px;";
+		if (!empty($instance['maxheight'])) {
+			$attr['style'] .= "max-height: {$instance['maxheight']};";
 		}
 		if (!empty($instance['align']) && $instance['align'] != 'none') {
 			$attr['class'] .= " align{$instance['align']}";
@@ -327,7 +332,8 @@ class Tribe_Image_Widget extends WP_Widget {
 		if ( !empty( $instance['size'] ) && $instance['size'] != self::CUSTOM_IMAGE_SIZE_SLUG ) {
 			$size = $instance['size'];
 		} elseif ( isset( $instance['width'] ) && is_numeric($instance['width']) && isset( $instance['height'] ) && is_numeric($instance['height']) ) {
-			$size = array(abs($instance['width']),abs($instance['height']));
+			//$size = array(abs($instance['width']),abs($instance['height']));
+			$size = array($instance['width'],$instance['height']);
 		} else {
 			$size = 'full';
 		}

@@ -34,8 +34,10 @@ if ( !defined('ABSPATH') )
 	<select name="<?php echo $this->get_field_name('linktarget'); ?>" id="<?php echo $this->get_field_id('linktarget'); ?>">
 		<option value="_self"<?php selected( $instance['linktarget'], '_self' ); ?>><?php _e('Stay in Window', 'image_widget'); ?></option>
 		<option value="_blank"<?php selected( $instance['linktarget'], '_blank' ); ?>><?php _e('Open New Window', 'image_widget'); ?></option>
-	</select></p>
-
+	</select><br />
+<label for="<?php echo $this->get_field_id('linktext'); ?>"><?php _e('Link Text:', 'image_widget'); ?></label>
+<input class="widefat" id="<?php echo $this->get_field_id('linktext'); ?>" name="<?php echo $this->get_field_name('linktext'); ?>" type="text" value="<?php echo esc_attr(strip_tags($instance['linktext'])); ?>" /><br />
+    </p>
 
 	<?php
 	// Backwards compatibility prior to storing attachment ids
