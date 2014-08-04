@@ -30,6 +30,12 @@
   display: block;
   margin-bottom: 20px;
   margin-bottom: 2rem;
+  border-bottom: 6px solid #0b3b7c;
+  min-height: 250px;
+}
+#hp-top .wrap {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 #hp-top .wrap .carousel {
   border-top: 4px solid #b4b5b8;
@@ -66,124 +72,34 @@
 .site-inner {
   display: none;
 }
-#hp-callout .textwidget {
-  font-family: "Open Sans", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  font-size: 14px;
-  margin: 28px auto 14px;
-  font-size: 1.4rem;
-  margin: 2.8rem auto 1.4rem;
+#homepage-widgets .wrap .widget {
+  border-radius: 0px;
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  padding: 20px;
+  padding: 2rem;
+  border-right: 1px solid #7d868d;
+  min-height: 225px;
+}
+#homepage-widgets .wrap .widget .widget-title {
+  color: #e97625;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-size: 1.9rem;
   text-align: center;
 }
-.slidedeck-iframe-embed {
-  margin: 0 auto;
-  border: 1px solid #b4b5b8;
+#homepage-widgets .wrap .widget.last-child {
+  border: 0;
 }
-#homepage-widgets .wrap .left {
-  padding: 0 50px;
-  padding: 0 5rem;
-}
-#homepage-widgets .wrap .left section.widget h4.widget-title {
-  margin: 0;
-  padding: 0;
-  color: #0b3b7c;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 20px;
-  font-size: 2rem;
-}
-#homepage-widgets .wrap .left section.widget h4.widget-title span {
-  font-size: 24px;
-  font-size: 2.4rem;
-  color: #e97625;
-  margin-bottom: 1rem;
-}
-#homepage-widgets .wrap .left section.widget ul {
-  border-top: 1px dotted #7d868d;
-}
-#homepage-widgets .wrap .left section.widget ul li {
-  border-bottom: 1px dotted #7d868d;
-}
-#homepage-widgets .wrap .left section.widget ul li:before {
-  font-family: "FontAwesome";
-  content: "\f041";
-  color: #0b3b7c;
-  margin-right: 5px;
-  margin-right: 0.5rem;
-}
-#homepage-widgets .wrap .left section.widget .readmore {
-  background-color: #0b3b7c;
-  -webkit-border-radius: 12px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 12px;
-  -moz-background-clip: padding;
-  border-radius: 12px;
-  background-clip: padding-box;
-  border: 0.5px solid #030e1e;
-  -webkit-filter: drop-shadow(0px 0px 2px 0.2px);
-  -moz-filter: drop-shadow(0px 0px 2px 0.2px);
-  -ms-filter: drop-shadow(0px 0px 2px 0.2px);
-  filter: drop-shadow(0px 0px 2px 0.2px);
-  padding: 6px 24px;
-  font-family: "Open Sans", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #FFFFFF !important;
-  font-size: 12px;
-  font-weight: normal;
-  text-transform: uppercase;
-  display: table;
-  margin: 12px auto;
-  float: right;
-}
-#homepage-widgets .wrap .left section.widget .readmore:hover {
-  text-decoration: none;
-}
-#homepage-widgets .wrap .left section.widget a.msd-widget-text {
-  display: none;
-}
-#homepage-widgets .wrap .right {
-  padding: 0;
-}
-#homepage-widgets .wrap .right section.widget {
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
-}
-#homepage-widgets .wrap .right section.widget .widget-icon {
-  border-right: 1px solid #ffffff;
-  color: #e97625;
-  padding: 20px 10px;
-  padding: 2rem 1rem;
+#homepage-widgets .wrap .widget_sp_image {
   text-align: center;
 }
-#homepage-widgets .wrap .right section.widget .widget-wrap {
-  padding: 10px;
-  padding: 1rem;
+#homepage-widgets .wrap .widget_sp_image .link a {
+  color: #64666b;
+  border: 0;
 }
-#homepage-widgets .wrap .right section.widget .widget-wrap h4.widget-title {
-  margin: 0;
-  padding: 0;
-  color: #0b3b7c;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 20px;
-  font-size: 2rem;
-}
-#homepage-widgets .wrap .right section.widget .widget-wrap .readmore span {
-  display: none;
-}
-#homepage-widgets .wrap .right section.widget .widget-wrap .readmore:hover {
-  text-decoration: none;
-}
-#homepage-widgets .wrap .right section.widget .widget-wrap i.fa-chevron-circle-right {
-  text-align: right;
-  display: block;
-  color: #0b3b7c;
-  font-size: 16px;
-  font-size: 1.6rem;
+#homepage-widgets .wrap .widget_sp_image .link a i {
+  color: #e97625;
 }
 /* Responsive Design Custom Styles
 ------------------------------------------------------------ */

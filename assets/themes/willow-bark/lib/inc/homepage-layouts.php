@@ -42,9 +42,9 @@ function msdlab_add_homepage_callout_sidebars(){
  */
 function msdlab_hero(){
     if(is_active_sidebar('homepage-top')){
-        print '<div id="hp-top">';
+        print '<div id="hp-top"><div class="wrap">';
         dynamic_sidebar('homepage-top');
-        print '</div>';
+        print '</div></div>';
     } 
 }
 
@@ -69,12 +69,7 @@ function msdlab_callout(){
 function msdlab_homepage_widgets(){
 	print '<div id="homepage-widgets" class="widget-area">';
 	print '<div class="wrap">';
-        print '<div class="left">';
-        dynamic_sidebar('homepage-callout');
-        print '</div>';
-        print '<div class="right">';
         dynamic_sidebar('homepage-widgets');
-        print '</div>';
   	print '</div>';
 	print '</div>';
 }
