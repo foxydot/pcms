@@ -6929,8 +6929,15 @@ Sidebars
   border-radius: 0px;
   margin-bottom: 20px;
   margin-bottom: 2rem;
-  padding-bottom: 20px;
-  padding-bottom: 2rem;
+  padding: 20px;
+  padding: 2rem;
+}
+.sidebar .widget .widget-title {
+  color: #e97625;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-size: 1.9rem;
+  text-align: center;
 }
 .sidebar .enews-widget {
   background-color: #333;
@@ -6969,6 +6976,16 @@ Sidebars
 }
 .sidebar .widget_text a {
   border: none;
+}
+.sidebar .widget_sp_image {
+  text-align: center;
+}
+.sidebar .widget_sp_image .link a {
+  color: #64666b;
+  border: 0;
+}
+.sidebar .widget_sp_image .link a i {
+  color: #e97625;
 }
 .sidebar span.fa-stack {
   color: #0b3b7c;
