@@ -132,19 +132,27 @@ Site Navigation
       padding: 0;
     }
     .sub-menu{
-      border: 2px solid @ltgrey;
-      background-color: @white;
+      border-top: 3px solid @orange;
+      background-color: @blue;
+      margin-top: -3px;
       li.menu-item{
-        background-color: @white;
+        background-color: @blue;
+        padding: 0 2rem;
+        width: 100%;
         a{
-          background-color: none;
-          border: none;
-          color: @blue;
+          background-color: transparent;
+          border: 0;
+          border-bottom: 1px solid @orange;
+          color: @white;
+          padding: 1rem 0;
+          width: 100%;
         }
       }
+      li.last-child>a{
+        border: 0;
+      }
       li:hover>a{
-        background-color: @ltgrey;
-        color: @orange;
+        color: @ltgrey;
         text-decoration: none;
       }
     }

@@ -6597,20 +6597,28 @@ Site Navigation
   padding: 0;
 }
 .nav-primary li.menu-item .sub-menu {
-  border: 2px solid #b4b5b8;
-  background-color: #ffffff;
+  border-top: 3px solid #e97625;
+  background-color: #0b3b7c;
+  margin-top: -3px;
 }
 .nav-primary li.menu-item .sub-menu li.menu-item {
-  background-color: #ffffff;
+  background-color: #0b3b7c;
+  padding: 0 2rem;
+  width: 100%;
 }
 .nav-primary li.menu-item .sub-menu li.menu-item a {
-  background-color: none;
-  border: none;
-  color: #0b3b7c;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #e97625;
+  color: #ffffff;
+  padding: 1rem 0;
+  width: 100%;
+}
+.nav-primary li.menu-item .sub-menu li.last-child > a {
+  border: 0;
 }
 .nav-primary li.menu-item .sub-menu li:hover > a {
-  background-color: #b4b5b8;
-  color: #e97625;
+  color: #b4b5b8;
   text-decoration: none;
 }
 .nav-primary li.separator {
