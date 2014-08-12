@@ -7247,6 +7247,10 @@ Site Footer
   padding: 20px 9px;
   padding: 2rem 0.9rem;
 }
+.tablepress .even td,
+.tablepress .odd td {
+  background-color: transparent !important;
+}
 .nav-responsive ul,
 .nav-responsive li,
 .nav-responsive li a {
