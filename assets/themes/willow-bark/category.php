@@ -1,9 +1,5 @@
 <?php
-
-global $wp_filter;
-//ts_var( $wp_filter['body_class'] );
-remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
-add_action('genesis_entry_header','msdlab_category_do_post_title', 20); //move the title out of the content area
+add_action('genesis_entry_header','msdlab_category_do_post_title', 5); //move the title out of the content area
 function msdlab_category_do_post_title() {
 
     $title = apply_filters( 'genesis_post_title_text', get_the_title() );

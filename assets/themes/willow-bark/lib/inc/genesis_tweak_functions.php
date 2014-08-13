@@ -166,6 +166,13 @@ function msdlab_breadcrumb_args($args) {
     $args['sep'] = ' > ';
     return $args;
 }
+function sp_post_info_filter($post_info) {
+    $post_info = 'Posted [post_date]';
+    return $post_info;
+}
+function sp_read_more_link() {
+    return '&hellip;&nbsp;<a class="more-link" href="' . get_permalink() . '">Read More <i class="fa fa-angle-right"></i></a>';
+}
 function msdlab_older_link_text() {
         $olderlink = 'Older Posts &raquo;';
         return $olderlink;
