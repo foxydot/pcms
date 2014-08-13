@@ -144,6 +144,20 @@ function msdlab_do_title_area(){
     print '</div>';
 }
 
+function msdlab_do_section_title(){
+    if(is_page()){
+        global $post;
+        if(get_section_title()!=$post->post_title){
+            add_action('genesis_before_entry','genesis_do_post_title');
+        }
+        print '<h2 class="section-title">';
+        print get_section_title();
+        print '</h2>';
+    } elseif(is_single()) {
+        genesis_do_post_title();
+    }
+}
+
 /**
  * Customize Breadcrumb output
  */

@@ -104,6 +104,13 @@ function get_section(){
     return $section;
 }
 
+function get_section_title(){
+    global $post;
+    $post_data = get_post(get_topmost_parent($post->ID));
+    $section = $post_data->post_title;
+    return $section;
+}
+
 function get_topmost_parent($post_id){
 	$parent_id = get_post($post_id)->post_parent;
 	if($parent_id == 0){
