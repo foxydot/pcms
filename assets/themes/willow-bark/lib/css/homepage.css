@@ -101,6 +101,24 @@
 #homepage-widgets .wrap .widget_sp_image .link a i {
   color: #e97625;
 }
+#homepage-widgets .wrap .widget_recent_entries .widget-title {
+  font-size: 2.4rem;
+  line-height: 2;
+  border-bottom: 1px solid #b4b5b8;
+}
+#homepage-widgets .wrap .widget_recent_entries .post-date {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #e97625;
+}
+#homepage-widgets .wrap .widget_recent_entries .post-title {
+  font-size: 1.8rem;
+  color: #7d868d;
+  font-weight: 400;
+}
+#homepage-widgets .wrap .widget_recent_entries .readmore {
+  color: #e97625;
+}
 /* Responsive Design Custom Styles
 ------------------------------------------------------------ */
 /* Smaller screens */
