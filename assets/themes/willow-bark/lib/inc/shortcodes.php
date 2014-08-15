@@ -5,6 +5,12 @@ function msdlab_button_function($atts, $content = null){
       'url' => null,
 	  'target' => '_self'
       ), $atts ) );
+      if(strstr($url,'mailto:',0)){
+          $parts = explode(':',$url);
+          if(is_email($parts[1])){
+              $url = $parts[0].':'.antispambot($parts[1]);
+          }
+      }
 	$ret = '<div class="button-wrapper">
 <a class="button" href="'.$url.'" target="'.$target.'">'.remove_wpautop($content).'</a>
 </div>';
@@ -60,22 +66,6 @@ function msdlab_mailto_function($atts, $content){
     $email = antispambot($email);
     return '<a href="mailto:'.$email.'">'.$content.'</a>';
 }
-/**
- * Hide email from Spam Bots using a shortcode.
- *
- * @param array  $atts    Shortcode attributes. Not used.
- * @param string $content The shortcode content. Should be an email address.
- *
- * @return string The obfuscated email address. 
- */
-function wpcodex_hide_email_shortcode( $atts , $content = null ) {
-    if ( ! is_email( $content ) ) {
-        return;
-    }
-
-    return antispambot( $content );
-}
-add_shortcode( 'email', 'wpcodex_hide_email_shortcode' );
 
 add_shortcode('columns','column_shortcode');
 
