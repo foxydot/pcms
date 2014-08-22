@@ -4,5 +4,14 @@ jQuery(document).ready(function($) {
     var cols = 12/numwidgets;
     $('#homepage-widgets section.widget').addClass('col-sm-'+cols);
     $('#homepage-widgets section.widget').addClass('col-xs-12');
-    $('#homepage-widgets section.widget').equalHeightColumns();
+    var is_mobile = false;
+
+    if( $('.mobile-only').css('display')==='block') {
+        is_mobile = true;       
+    }
+
+    if (is_mobile === true) {
+        //Conditional script here
+        $('#homepage-widgets section.widget').equalHeightColumns();     
+    }  
 });
