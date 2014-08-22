@@ -11,6 +11,7 @@ function msdlab_add_apple_touch_icons(){
     <link href="'.get_stylesheet_directory_uri().'/lib/img/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
     <link rel="shortcut icon" href="'.get_stylesheet_directory_uri().'/lib/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="'.get_stylesheet_directory_uri().'/lib/img/favicon.ico" type="image/x-icon">
+    <meta name="format-detection" content="telephone=no">
     ';
     print $ret;
 }
