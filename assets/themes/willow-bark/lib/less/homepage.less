@@ -129,28 +129,24 @@
 @media only screen and (max-width: 767px) {
   /* Enter Your Custom Styles Here */ 
   #hp-top{
-    min-height: 125px;
-    .wrap{
-    min-height: 125px;
-    .carousel .item {
-      height: 125px;
-    }  
+    display: none;
   }
+  #homepage-widgets{
+    .wrap{
+      .widget{
+        border-right: 0;
+        border-bottom: 1px solid @ltgrey;
+      }
+      .widget.last-child{
+        border: 0;
+      }
+    }
   }
 }
 
 
 @media only screen and (max-width : 479px) {  
   /* Enter Your Custom Styles Here */ 
-  #hp-top{
-    min-height: 85px;
-    .wrap{
-    min-height: 85px;
-    .carousel .item {
-      height: 85px;
-    }
-  }
-  }
 } 
 
 @media only screen and (max-width : 319px) {  
