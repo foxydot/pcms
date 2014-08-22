@@ -5,11 +5,9 @@ jQuery(document).ready(function($) {
     $('#homepage-widgets section.widget').addClass('col-sm-'+cols);
     $('#homepage-widgets section.widget').addClass('col-xs-12');
     var is_mobile = false;
-
     if( $('.mobile-only').css('display')==='block') {
         is_mobile = true;       
     }
-
     if (is_mobile === true) {
         //Conditional script here
         $('#homepage-widgets section.widget').equalHeightColumns();     

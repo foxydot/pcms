@@ -7427,6 +7427,9 @@ Site Footer
     text-align: center;
     margin-top: 1rem;
   }
+  .pre-header .wrap .header-widget-area .widget .button span {
+    display: block;
+  }
   .pre-header .wrap .header-widget-area .msd-connected {
     margin-top: -1.5rem;
   }
