@@ -32,7 +32,8 @@ class MSDSocial{
 		add_shortcode('msd-address',array(&$this,'get_address'));
 		add_shortcode('msd-bizname',array(&$this,'get_bizname'));
 		add_shortcode('msd-copyright',array(&$this,'get_copyright'));
-		add_shortcode('msd-digits',array(&$this,'get_digits'));
+        add_shortcode('msd-digits',array(&$this,'get_digits'));
+        add_shortcode('msd-phone',array(&$this,'get_phone'));
         add_shortcode('msd-social',array(&$this,'social_media'));
         add_shortcode('msd-hours',array(&$this,'get_hours'));
 	}
